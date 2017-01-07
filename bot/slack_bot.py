@@ -1,7 +1,12 @@
+#!/usr/bin/env python
+
 import os
 import time
 import random
 from slackclient import SlackClient
+
+from beepboop import resourcer
+from beepboop import bot_manager
 
 import urllib, json
 
@@ -22,7 +27,7 @@ AT_BOT = "<@" + BOT_ID + ">"
 random_song = "song"
 
 # instantiate Slack & Twilio clients
-slack_client = SlackClient(SLACK_TOKEN)
+slack_client = SlackClient(slack_token)
 
 def handle_command(command, channel):
     """
